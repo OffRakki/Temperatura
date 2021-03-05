@@ -14,14 +14,14 @@ fn main() {
     };
     
     if scale == 1 {
-        f();
+        f_to_c();
     } else {
-        c();
+        c_to_f();
     }
 
 }
 
-fn f() {
+fn f_to_c() {
     println!("Type your value in °F:");
 
     //Pega o input do teclado e garante que será um número
@@ -40,7 +40,7 @@ fn f() {
     println!("{}°F = {}°C", f, result);
 }
 
-fn c() {
+fn c_to_f() {
     println!("Type your value in °C:");
 
     // Pega o input do teclado e garante que será um número
