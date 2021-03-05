@@ -1,5 +1,25 @@
 use std::io;
 
+fn main() {
+
+    println!("Would you like to convert from (1)°F to °C or (2)°C to °F");
+
+    let scale: u8 = {
+        let mut buffer = String::new();
+        io::stdin()
+            .read_line(&mut buffer)
+            .expect("Não foi possível acessar o stdin");
+        buffer.trim().parse().expect("Por favor, apenas números!")
+    };
+    
+    if scale == 1 {
+        f();
+    } else {
+        c();
+    }
+
+}
+
 fn f() {
     println!("Type your value in °F:");
 
@@ -32,22 +52,3 @@ fn c() {
     println!("{}°C = {}°F", c, result);
 }
 
-fn main() {
-
-    println!("Would you like to convert from (1)°F to °C or (2)°C to °F");
-
-    let scale: u8 = {
-        let mut buffer = String::new();
-        io::stdin()
-            .read_line(&mut buffer)
-            .expect("Não foi possível acessar o stdin");
-        buffer.trim().parse().expect("Por favor, apenas números!")
-    };
-    
-    if scale == 1 {
-        f();
-    } else {
-        c();
-    }
-
-}
