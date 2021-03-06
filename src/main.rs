@@ -37,7 +37,7 @@ fn f_to_c() {
     let result: f32 = (f - 32.0) * 5.0/9.0;
 
     // Mostra o resultado
-    println!("\n{}°F = {}°C\n", f, result);
+    println!("\n{}°F = {:.2}°C\n", f, result);
     println!("formula utilizada: (°F - 32) * 5/9");
 }
 
@@ -57,7 +57,7 @@ fn c_to_f() {
     let result: f32 = (c * 9.0/5.0) + 32.0;
 
     //Mostra o resultado
-    println!("\n{}°C = {}°F\n", c, result);
+    println!("\n{}°C = {:.2}°F\n", c, result);
     println!("formula utilizada: (°c - * 9/5) + 32");
 }
 
