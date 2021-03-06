@@ -2,7 +2,7 @@ use std::io;
 
 fn main() {
 
-    println!("Would you like to convert from (1)°F to °C or (2)°C to °F");
+    println!("Would you like to convert from | (1) °F to °C | or | (2) °C to °F | ?");
 
     //Pega o input do teclado e garante que será um número
     let scale: u8 = {
@@ -37,7 +37,8 @@ fn f_to_c() {
     let result: f32 = (f - 32.0) * 5.0/9.0;
 
     // Mostra o resultado
-    println!("{}°F = {}°C", f, result);
+    println!("\n{}°F = {}°C\n", f, result);
+    println!("formula utilizada: (°F - 32) * 5/9");
 }
 
 fn c_to_f() {
@@ -56,6 +57,7 @@ fn c_to_f() {
     let result: f32 = (c * 9.0/5.0) + 32.0;
 
     //Mostra o resultado
-    println!("{}°C = {}°F", c, result);
+    println!("\n{}°C = {}°F\n", c, result);
+    println!("formula utilizada: (°c - * 9/5) + 32");
 }
 
