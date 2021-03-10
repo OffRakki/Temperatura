@@ -2,7 +2,7 @@ use std::io;
 
 fn main() {
 
-    println!("Would you like to convert from | (1) °F to °C | or | (2) °C to °F | ?");
+    colour::dark_cyan_ln!("Would you like to convert from | (1) °F to °C | or | (2) °C to °F | ?");
 
     //Pega o input do teclado e garante que será um número
     let scale: u8 = {
@@ -19,10 +19,14 @@ fn main() {
         c_to_f();
     }
 
+    println!("Type anything to exit...");
+        let mut buffer = String::new(); 
+        let _= io::stdin()
+            .read_line(&mut buffer);
 }
 
 fn f_to_c() {
-    println!("Type your value in °F:");
+    colour::dark_cyan_ln!("Type your value in °F:");
 
     //Pega o input do teclado e garante que será um número
     let f: f32 = {
@@ -37,12 +41,14 @@ fn f_to_c() {
     let result: f32 = (f - 32.0) * 5.0/9.0;
 
     // Mostra o resultado
-    println!("\n{}°F = {:.2}°C\n", f, result);
-    println!("formula utilizada: (°F - 32) * 5/9");
+    colour::dark_red!("\n{}°F ", f);
+    colour::dark_cyan!("= ");
+    colour::dark_red_ln!("{:.2}°C", result);
+    colour::magenta_ln!("formula utilizada: (°F - 32) * 5/9\n");
 }
 
 fn c_to_f() {
-    println!("Type your value in °C:");
+    colour::dark_cyan_ln!("Type your value in °C:");
 
     // Pega o input do teclado e garante que será um número
     let c: f32 = {
@@ -57,7 +63,9 @@ fn c_to_f() {
     let result: f32 = (c * 9.0/5.0) + 32.0;
 
     //Mostra o resultado
-    println!("\n{}°C = {:.2}°F\n", c, result);
-    println!("formula utilizada: (°c - * 9/5) + 32");
+    colour::dark_red!("\n{}°C ", c);
+    colour::dark_cyan!("= ");
+    colour::dark_red!("{:.2}°F\n", result);
+    colour::magenta_ln!("formula utilizada: (°c - * 9/5) + 32\n");
 }
 
